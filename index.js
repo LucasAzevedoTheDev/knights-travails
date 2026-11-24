@@ -4,8 +4,8 @@ function knightMoves() {
 }
 
 function move(position) {
-  let output = [];
-  let moves = [
+  const output = [];
+  const moves = [
     [-2, -1],
     [-1, -2],
     [+1, -2],
@@ -16,10 +16,10 @@ function move(position) {
     [-2, +1],
   ];
 
-  moves.forEach((move) => {
-    let initial = [...position];
-    initial[0] += move[0];
-    initial[1] += move[1];
+  moves.forEach((moveList) => {
+    const initial = [...position];
+    initial[0] += moveList[0];
+    initial[1] += moveList[1];
 
     if (
       initial[0] >= 0 &&
@@ -34,3 +34,5 @@ function move(position) {
 }
 
 console.log(move([0, 0]));
+console.log(move([2, 1]));
+console.log(move([1, 2]));
