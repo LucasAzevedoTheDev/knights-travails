@@ -21,7 +21,14 @@ function move(position) {
     initial[0] += move[0];
     initial[1] += move[1];
 
-    output.push(initial);
+    if (
+      initial[0] >= 0 &&
+      initial[0] <= 7 &&
+      initial[1] >= 0 &&
+      initial[1] <= 7
+    ) {
+      output.push(initial);
+    }
   });
   return output;
 }
