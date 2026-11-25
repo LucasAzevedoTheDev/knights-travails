@@ -5,7 +5,13 @@ function knightMoves(start, end) {
     let current = queue.shift();
     let currentSquare = current[current.length - 1];
 
-    if (check(currentSquare, end)) return `You made it with ${current.length - 1} moves!`;
+    if (check(currentSquare, end)) {
+      console.log(`You made it with ${current.length - 1} moves! Here's your path:`);
+      current.forEach((square) => {
+        console.log(square)
+      })
+      return;
+    }
 
     move(currentSquare).forEach((value) => {
       queue.push([...current, value]);
