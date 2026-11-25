@@ -1,17 +1,15 @@
 function knightMoves(start, end) {
-  const initial = move(start);
+  let queue = [[start]];
 
-  for (const option of initial) {
-    if (option[0] === end[0] && option[1] === end[1]) {
-      return "You made it with 1 move!";
-    }
-  }
-
-  let queue = initial;
-  console.log(queue);
   while (queue.length !== 0) {
-    // take the first square out of the queue
     let current = queue.shift();
+    let currentSquare = current[current.length - 1];
+
+    if (check(currentSquare, end)) return `You made it with ${current.length - 1} moves!`;
+
+    move(currentSquare).forEach((value) => {
+      queue.push([...current, value]);
+    });
   }
 }
 
@@ -49,4 +47,4 @@ function move(position) {
   });
   return output;
 }
-console.log(knightMoves([0, 0], [3, 3]));
+console.log(knightMoves([0, 0], [2, 1]));
