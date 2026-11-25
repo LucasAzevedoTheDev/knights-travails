@@ -1,6 +1,11 @@
-function knightMoves() {
-  // shows the shortest possible way to get from one square to another
-  // output all squares the knight will stop on along the way
+function knightMoves(start, end) {
+  const initial = move(start);
+
+  for (const option of initial) {
+    if (option[0] === end[0] && option[1] === end[1]) {
+      return "You made it with 1 move!";
+    }
+  }
 }
 
 function move(position) {
@@ -32,7 +37,4 @@ function move(position) {
   });
   return output;
 }
-
-console.log(move([0, 0]));
-console.log(move([2, 1]));
-console.log(move([1, 2]));
+console.log(knightMoves([0, 0], [2, 1]));
