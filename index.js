@@ -6,6 +6,18 @@ function knightMoves(start, end) {
       return "You made it with 1 move!";
     }
   }
+
+  let queue = initial;
+  console.log(queue);
+  while (queue.length !== 0) {
+    // take the first square out of the queue
+    let current = queue.shift();
+  }
+}
+
+function check(input, target) {
+  if (input[0] === target[0] && input[1] === target[1]) return true;
+  else return false;
 }
 
 function move(position) {
@@ -37,4 +49,4 @@ function move(position) {
   });
   return output;
 }
-console.log(knightMoves([0, 0], [2, 1]));
+console.log(knightMoves([0, 0], [3, 3]));

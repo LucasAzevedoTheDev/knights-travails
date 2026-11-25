@@ -65,4 +65,4 @@ given position A and B, find the shortest number of moves required to move betwe
         if that square is the end square:
           found it, stop
         for each square that move() returns: 
-          put it at the back of the quee
+          put it at the back of the queue
